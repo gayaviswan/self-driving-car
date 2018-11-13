@@ -1,9 +1,5 @@
 # **Finding Lane Lines on the Road** 
 
-## Writeup Template
-
-### You can use this file as a template for your writeup if you want to submit it as a markdown file. But feel free to use some other method and submit a pdf if you prefer.
-
 ---
 
 **Finding Lane Lines on the Road**
@@ -39,11 +35,11 @@ Additionally, In order to draw a single line on the left and right lanes, I modi
 
 The following images shows how the image goes through the various pipeline before detecting the lane lines after joining the disjoint lines.
 
-![alt text][./examples/grayscale_mine.jpg]
-![alt text][./examples/gaussian_blur.jpg]
-![alt text][./examples/canny_image.jpg]
-![alt text][./examples/region_interest_mine.jpg]
-![alt text][./examples/hough_image.jpg]
+![Gray Scale](./examples/grayscale_mine.jpg)
+![Gaussian Blur](./examples/gaussian_blur.jpg)
+![canny Image](./examples/canny_image.jpg)
+![Region Of Interest](./examples/region_interest_mine.jpg)
+![Hough Image][./examples/hough_image.jpg]
 
 ### 2. Identify potential shortcomings with your current pipeline
 
