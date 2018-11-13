@@ -25,29 +25,29 @@ The goals / steps of this project are the following:
 
 My pipeline consisted of 5 steps. 
 
-1. I converted the images to grayscale
+1. Converted the images from rgb to grayscale to make it  easier to find the edges in the image
 
-2. I used gaussian blur to blur the image
+2. On the grayscaled image, we run the Gaussian blur to reduce image noise and reduce detail.
 
-3. Used canny edge detection to detect edges
+3. The resulting image is run through canny edge detection to find all the edges in the image
 
-4. Masked the rest of the image other than the region of interest. In this case it is the lane line in front of us.
+4. Since our interest is finding the lane lines, we find the regions of interest where our lane line falls in the image. The resulting image only contains the part of the image we are interested
 
-5. Send the image to hough transform to find the lines
+5. With interested region identified in the image, we run Hough transform on this to identify the lane lines
 
-Additionally, In order to draw a single line on the left and right lanes, I modified the draw_lines() function by 
+Additionally, In order to draw a single line on the left and right lanes, I modified the draw_lines() function to combine the disjoint lines.
 
-If you'd like to include images to show how the pipeline works, here is how to include an image: 
+The following images shows how the image goes through the various pipeline before detecting the lane lines after joining the disjoint lines.
 
-![alt text][image1]
-
+![alt text][./examples/grayscale_mine.jpg]
+![alt text][./examples/gaussian_blur.jpg]
+![alt text][./examples/canny_image.jpg]
+![alt text][./examples/region_interest_mine.jpg]
+![alt text][./examples/hough_image.jpg]
 
 ### 2. Identify potential shortcomings with your current pipeline
 
-
-One potential shortcoming would be what would happen when ... 
-
-Another shortcoming could be ...
+The current pipeline is not accounted for identifying various light conditions including cloudy days or night time driving. The pipeline also does not account for curves in the road.
 
 
 ### 3. Suggest possible improvements to your pipeline
